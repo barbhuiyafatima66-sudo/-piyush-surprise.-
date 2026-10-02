@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Piyush 🤍</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        min-height: 100vh;
+        font-family: Georgia, serif;
+        background: linear-gradient(135deg, #fff1f6, #f8e1eb, #fff8fb);
+        color: #4a2635;
+        overflow-x: hidden;
+    }
+
+    .hearts {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: 0;
+    }
+
+    .heart {
+        position: absolute;
+        bottom: -40px;
+        font-size: 22px;
+        opacity: 0;
+        animation: floatUp linear infinite;
+    }
+
+    @keyframes floatUp {
+        0% {
+            transform: translateY(0) rotate(0deg);
+            opacity: 0;
+        }
+
+        20% {
+            opacity: 0.55;
+        }
+
+        100% {
+            transform: translateY(-110vh) rotate(360deg);
+            opacity: 0;
+        }
+    }
+
+    .page {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 25px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .card {
+        width: min(92%, 620px);
+        padding: 42px 28px;
+        text-align: center;
+        background: rgba(255,255,255,0.82);
+        backdrop-filter: blur(12px);
+        border-radius: 28px;
+        border: 1px solid rgba(255,255,255,0.9);
+        box-shadow: 0 20px 60px rgba(100,50,70,0.15);
+        animation: appear 0.6s ease;
+    }
+
+    @keyframes appear {
+        from {
+            opacity: 0;
+            transform: translateY(15px) scale(0.98);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+
+    .small {
+        font-family: Arial, sans-serif;
+        font-size: 12px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: #a65c78;
+        margin-bottom: 15px;
+    }
+
+    h1 {
+        font-size: clamp(38px, 9vw, 62px);
+        margin-bottom: 15px;
+    }
+
+    h2 {
+        font-size: clamp(27px, 7vw, 36px);
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .subtitle {
+        color: #765362;
+        margin-bottom: 30px;
+    }
+
+    button {
+        border: none;
+        background: #7d4058;
+        color: white;
+        padding: 14px 25px;
+        border-radius: 999px;
+        font-size: 15px;
+        cursor: pointer;
+        transition: 0.25s ease;
+        box-shadow: 0 8px 20px rgba(125,64,88,0.22);
+    }
+
+    button:hover {
+        transform: translateY(-2px);
+        background: #663247;
+    }
+
+    button:active {
+        transform: scale(0.97);
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .message {
+        text-align: left;
+        background: rgba(255,245,248,0.9);
+        border-radius: 20px;
+        padding: 24px;
+        margin: 25px 0;
+    }
+
+    .reasons {
+        display: grid;
+        gap: 12px;
+        margin: 25px 0;
+    }
+
+    .reason {
+        background: white;
+        border-radius: 16px;
+        padding: 16px;
+        font-family: Arial, sans-serif;
+        box-shadow: 0 5px 15px rgba(80,40,55,0.06);
+    }
+
+    .photo-box {
+        width: 100%;
+        min-height: 190px;
+        border-radius: 20px;
+        overflow: hidden;
+        margin: 22px 0;
+        background: linear-gradient(135deg, #f5dce5, #f9eaf0);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #8c6070;
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
+
+    .photo-box img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .final {
+        margin-top: 20px;
+        font-size: 18px;
+        line-height: 1.8;
+        font-family: Georgia, serif;
+    }
+
+    .signature {
+        margin-top: 25px;
+        font-family: Georgia, serif;
+        font-style: italic;
+        font-size: 18px;
+    }
+
+    .tiny {
+        margin-top: 25px;
+        font-family: Arial, sans-serif;
+        font-size: 11px;
+        color: #9a7885;
+    }
+
+    .big-heart {
+        font-size: 70px;
+        margin-bottom: 10px;
+        animation: heartbeat 1.5s infinite;
+    }
+
+    @keyframes heartbeat {
+        0%, 100% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.12);
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- Floating hearts -->
+<div class="hearts">
+    <span class="heart" style="left:7%; animation-duration:9s;">♡</span>
+    <span class="heart" style="left:18%; animation-duration:12s; animation-delay:2s;">♥</span>
+    <span class="heart" style="left:32%; animation-duration:10s; animation-delay:4s;">♡</span>
+    <span class="heart" style="left:48%; animation-duration:13s; animation-delay:1s;">♥</span>
+    <span class="heart" style="left:63%; animation-duration:9s; animation-delay:3s;">♡</span>
+    <span class="heart" style="left:78%; animation-duration:11s;">♥</span>
+    <span class="heart" style="left:91%; animation-duration:14s; animation-delay:2s;">♡</span>
+</div>
+
+
+<div class="page">
+
+    <!-- SCREEN 1 -->
+    <div class="card" id="screen1">
+
+        <div class="small">A tiny surprise for you</div>
+
+        <h1>Hey Piyush 👀</h1>
+
+        <p class="subtitle">
+            I made something for you.<br>
+            And yes... you're actually going to have to click the button.
+        </p>
+
+        <button onclick="nextScreen(2)">
+            Okay... let's see 🤭
+        </button>
+
+        <div class="tiny">
+            P.S. I spent actual time making this, so behave. 😭
+        </div>
+
+    </div>
+
+
+    <!-- SCREEN 2 -->
+    <div class="card hidden" id="screen2">
+
+        <div class="small">Plot twist</div>
+
+        <h2>
+            You actually clicked it. 😭
+        </h2>
+
+        <p class="subtitle">
+            Since you're already here,
+            I might as well tell you why I made this.
+        </p>
+
+        <button onclick="nextScreen(3)">
+            I'm listening →
+        </button>
+
+    </div>
+
+
+    <!-- SCREEN 3 -->
+    <div class="card hidden" id="screen3">
+
+        <div class="small">For Piyush</div>
+
+        <h2>Happy Boyfriend Day 🤍</h2>
+
+        <div class="message">
+
+            <p>
+                I could've just sent you a normal message,
+                but that would've been way too boring.
+            </p>
+
+            <br>
+
+            <p>
+                So here's my slightly dramatic and unnecessarily
+                complicated way of saying that I'm really glad
+                you're a part of my life.
+            </p>
+
+            <br>
+
+            <p>
+                You somehow manage to make ordinary conversations,
+                random moments and even the most boring days
+                a little more fun.
+            </p>
+
+            <br>
+
+            <p>
+                And yes, you can be annoying.
+                Very annoying, actually. 😭
+                But unfortunately, you're still pretty special.
+            </p>
+
+        </div>
+
+        <button onclick="nextScreen(4)">
+            There's more? 👀
+        </button>
+
+    </div>
+
+
+    <!-- SCREEN 4 -->
+    <div class="card hidden" id="screen4">
+
+        <div class="small">A few things</div>
+
+        <h2>Things I appreciate about you</h2>
+
+        <div class="reasons">
+
+            <div class="reason">
+                ♡ You make me laugh when I don't expect it.
+            </div>
+
+            <div class="reason">
+                ♡ You make random conversations interesting.
+            </div>
+
+            <div class="reason">
+                ♡ You remember little things.
+            </div>
+
+            <div class="reason">
+                ♡ I can be myself around you.
+            </div>
+
+            <div class="reason">
+                ♡ And somehow you still tolerate me. 😭
+            </div>
+
+        </div>
+
+        <button onclick="nextScreen(5)">
+            One last thing →
+        </button>
+
+    </div>
+
+
+    <!-- SCREEN 5 -->
+    <div class="card hidden" id="screen5">
+
+        <div class="small">One last thing</div>
+
+        <h2>Before you go...</h2>
+
+        <div class="photo-box">
+
+            <!--
+            If you want to add a photo later:
+
+            1. Upload your photo to this same GitHub repository.
+            2. Name it photo.jpg
+            3. Delete the text below.
+            4. Put this instead:
+
+            <img src="photo.jpg" alt="A favourite memory">
+
+            -->
+
+            <span>
+                📷<br><br>
+                Your favourite photo can go here.
+            </span>
+
+        </div>
+
+        <p class="final">
+
+            I don't need a special day to appreciate you,
+
+            <br>
+
+            but since today gives me an excuse...
+
+            <br><br>
+
+            <strong>Happy Boyfriend Day, Piyush. 🤍</strong>
+
+            <br><br>
+
+            Stay exactly as wonderfully annoying as you are.
+
+        </p>
+
+        <div class="signature">
+            — from someone who definitely didn't spend too much time making this 🤭
+        </div>
+
+        <br><br>
+
+        <button onclick="nextScreen(6)">
+            Wait... one secret 👀
+        </button>
+
+    </div>
+
+
+    <!-- SCREEN 6 -->
+    <div class="card hidden" id="screen6">
+
+        <div class="small">Secret unlocked</div>
+
+        <div class="big-heart">
+            ♡
+        </div>
+
+        <h2>Okay, NOW we're done.</h2>
+
+        <p class="final">
+
+            Unless you want another website
+            every time there's a special day. 😭
+
+            <br><br>
+
+            <strong>Happy Boyfriend Day, Piyush 🤍</strong>
+
+        </p>
+
+        <div class="signature">
+            Don't forget who made this. 😌
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function nextScreen(number) {
+
+    document.querySelectorAll(".card").forEach(function(card) {
+        card.classList.add("hidden");
+    });
+
+    document.getElementById("screen" + number).classList.remove("hidden");
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+</script>
+
+</body>
+</html>
